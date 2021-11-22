@@ -10,7 +10,7 @@ PIPEDRIVE_API_URL = 'https://api.pipedrive.com/v1/'
 logger = logging.getLogger('pypipedrive')
 
 
-class PipeDriveError(StandardError):
+class PipeDriveError(Exception):
     pass
 
 
@@ -112,4 +112,4 @@ if __name__ == "__main__":
     api_token = environ.get('PIPEDRIVE_API_TOKEN')
     p = PipeDrive(api_token)
     r = p.persons(limit=5)
-    print r
+    print(r)
